@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper class="index-swiper" indicator-dots autoplay interval="{{3000}}">
+    <block wx:for="{{indexSwiperImgUrls}}" wx:key="index-swiper-img-{{index}}">
+      <swiper-item class="index-swiper-item">
+        <image src="{{item}}" class="index-swiper-item-img" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

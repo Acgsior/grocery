@@ -1,0 +1,16 @@
+/**index.wxss**/
+.container {
+
+}
+
+.index-swiper {
+  height: 400rpx;
+}
+
+.index-swiper-item {
+  display: flex;
+}
+
+.index-swiper-item-img {
+  width: 100%;
+}
