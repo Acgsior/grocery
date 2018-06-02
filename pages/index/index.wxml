@@ -1,5 +1,13 @@
 <!--index.wxml-->
 <view class="container">
+  <view class="index-search">
+    <input class="index-search-input" type="text" placeholder="Search..." />
+  </view>
+  <view class="index-menu">
+    <block wx:for="{{indexMenus}}" wx:key="index-menu-item-{{index}}">
+      <navigator class="index-menu-item">{{item}}</navigator>
+    </block>
+  </view>
   <swiper class="index-swiper" indicator-dots autoplay interval="{{3000}}">
     <block wx:for="{{indexSwiperImgUrls}}" wx:key="index-swiper-img-{{index}}">
       <swiper-item class="index-swiper-item">

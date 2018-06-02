@@ -1,6 +1,31 @@
 /**index.wxss**/
 .container {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7em;
+}
 
+.index-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15rpx;
+}
+
+.index-search-input {
+  width: 85%;
+  background-color: #eee;
+  border-radius: 5rpx;
+  padding: 0 10rpx;
+}
+
+.index-menu {
+  display: flex;
+  justify-content: space-around;
+  margin: 15rpx;
+}
+
+.index-menu-item {
+  padding: 5rpx;
 }
 
 .index-swiper {
