@@ -28,8 +28,8 @@ Page({
       img: 'https://data.whicdn.com/images/313355192/large.jpg'
     }, {
       name: 'Doggy',
-      price: 55700000,
-      priceBefore: 5000000,
+      price: 5570000,
+      priceBefore: 500000,
       img: 'https://data.whicdn.com/images/313325092/large.jpg'
     }, {
       name: 'Strawberry Piece',
