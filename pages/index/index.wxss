@@ -8,7 +8,7 @@
 .index-search {
   display: flex;
   justify-content: center;
-  margin-bottom: 15rpx;
+  margin: 15rpx;
 }
 
 .index-search-input {
@@ -38,4 +38,64 @@
 
 .index-swiper-item-img {
   width: 100%;
+}
+
+.index-tips {
+  display: flex;
+  justify-content: space-around;
+  margin: 20rpx;
+}
+
+.index-goods {
+  display: flex;
+  justify-content: space-around;
+  margin: 15rpx;
+}
+
+.index-goods-left, .index-goods-right {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+}
+
+.index-goods-info {
+  padding: 15rpx;
+  border-radius: 5rpx;
+  background-color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.index-goods-info-img {
+  width: 40vw;
+  margin-bottom: 20rpx;
+}
+
+.index-goods-info-label {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.index-goods-info-name,
+.index-goods-info-price {
+  display: block;
+  line-height: 2em;
+  min-height: 40rpx;
+}
+
+.index-goods-info-price-before {
+  display: inline-block;
+  margin: 0 10rpx;
+  text-decoration: line-through;
+}
+
+.index-goods-info-price-now {
+  display: inline-block;
+  margin: 0 10rpx;
+  color: #7b0f16;
+  font-size: 1.6em;
+  font-weight: bold;
 }

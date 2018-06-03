@@ -15,4 +15,39 @@
       </swiper-item>
     </block>
   </swiper>
+  <view class="index-tips">
+    <block wx:for="{{indexTips}}" wx:key="index-tip-{{index}}">
+      <text>#{{item}}</text>
+    </block>
+  </view>
+  <view class="index-goods">
+    <view class="index-goods-left">
+      <block wx:for="{{indexGoods}}" wx:key="index-good-left-{{index}}">
+        <view wx:if="{{index % 2 === 0}}" class="index-goods-info">
+          <image src="{{item.img}}" mode="widthFix" class="index-goods-info-img" />
+          <view class="index-goods-info-label">
+            <text class="index-goods-info-name">{{item.name}}</text>
+            <view class="index-goods-info-price">
+              <text class="index-goods-info-price-before">${{item.priceBefore}}</text>
+              <text class="index-goods-info-price-now">${{item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="index-goods-right">
+      <block wx:for="{{indexGoods}}" wx:key="index-good-left-{{index}}">
+        <view wx:if="{{index % 2 === 1}}" class="index-goods-info">
+          <image src="{{item.img}}" mode="widthFix" class="index-goods-info-img" />
+          <view class="index-goods-info-label">
+            <text class="index-goods-info-name">{{item.name}}</text>
+            <view class="index-goods-info-price">
+              <text class="index-goods-info-price-before">${{item.priceBefore}}</text>
+              <text class="index-goods-info-price-now">${{item.price}}</text>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
 </view>
