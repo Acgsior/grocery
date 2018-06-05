@@ -1,0 +1,154 @@
+// out: good.wxss, compress:false, sourceMap:false
+
+.good-swiper {
+  height: 800rpx;
+
+  &-item-img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.good-base {
+  padding: 20rpx 30rpx;
+  display: flex;
+  justify-content: space-between;
+
+  &-name,
+  &-price {
+    line-height: 40rpx;
+  }
+
+  &-price-before {
+    margin: 0 10rpx;
+    text-decoration: line-through;
+  }
+
+  &-price-now {
+    margin: 0 10rpx;
+    color: #7b0f16;
+    font-size: 40rpx;
+    font-weight: bold;
+  }
+}
+
+.good-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  border-top: 15rpx solid #eeeeee;
+  line-height: 26rpx;
+
+  &-promotion-type {
+    font-size: 20rpx;
+    padding: 5rpx;
+    color: #f0f0f0;
+    background-color: orange;
+  }
+
+  &-promotion-description {
+    margin-left: 10rpx;
+  }
+
+  &-share {
+    width: 32rpx;
+    height: 32rpx;
+  }
+}
+
+.good-tips {
+  border-top: 5rpx solid #eeeeee;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rpx 30rpx;
+
+  &-item {
+    display: flex;
+    margin-right: 5rpx;
+    padding: 10rpx;
+    line-height: 26rpx;
+
+    &-icon {
+      margin-right: 5rpx;
+    }
+  }
+}
+
+.good-reviews {
+  border-top: 15rpx solid #eeeeee;
+  padding: 10rpx 30rpx;
+  margin-bottom: 80rpx;
+
+  &-summary {
+    display: block;
+    margin: 20rpx 0;
+    font-size: 30rpx;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+
+    &-item {
+      padding: 20rpx;
+      border-top: 5rpx solid #eeeeee;
+      margin-bottom: 10rpx;
+      display: flex;
+      flex-direction: column;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20rpx;
+      }
+
+      &-header > text,
+      &-content {
+        display: block;
+      }
+    }
+  }
+}
+
+.good-control-bar {
+  position: fixed;
+  bottom: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30rpx;
+  background: #eeeeee;
+  opacity: .8;
+
+  &-buttons {
+    margin: 15rpx 0;
+    display: flex;
+    align-items: center;
+
+    & > .icon {
+      height: 45rpx;
+      width: 45rpx;
+      padding: 0 20rpx;
+      border-right: 5rpx solid #e0e0e0;
+    }
+
+    & > .icon.icon-cart {
+      border-right: none;
+    }
+  }
+
+  &-add-to-cart {
+    background: #7b0f16;
+    color: #e0e0e0;
+    font-size: 40rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > view {
+      margin: 0 50rpx;
+    }
+  }
+}

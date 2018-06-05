@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/index/index", "pages/good/good"],
+  "pages": ["src/pages/good/good", "src/pages/index/index"],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",

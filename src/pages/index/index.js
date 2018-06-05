@@ -9,7 +9,7 @@ Page({
       'https://data.whicdn.com/images/82096478/large.jpg',
     ],
     indexMenus: ['Home', 'SALE', 'Male', 'Female', 'Child'],
-    indexTips: ['Evaluation', 'Free Shipping for $49', 'Return Allowance'],
+    indexTips: ['Evaluation', 'Free shipping for $49', 'Return allowance'],
     indexGoods: [
       {
         name: 'Flat White',

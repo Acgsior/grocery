@@ -1,0 +1,52 @@
+<view class="container">
+  <swiper class="good-swiper" indicator-dots autoplay interval="{{3000}}">
+    <block wx:for="{{goodSwiperImgUrls}}" wx:key="good-swiper-img-{{index}}">
+      <swiper-item class="good-swiper-item">
+        <image src="{{item}}" class="good-swiper-item-img" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="good-base">
+    <text class="good-base-name">{{good.name}}</text>
+    <view class="good-base-price">
+      <text class="good-base-price-before">${{good.priceBefore}}</text>
+      <text class="good-base-price-now">${{good.price}}</text>
+    </view>
+  </view>
+  <view class="good-info">
+    <view class="good-info-promotion">
+      <text class="good-info-promotion-type">{{good.promotion.type}}</text>
+      <text class="good-info-promotion-description">{{good.promotion.description}}</text>
+    </view>
+    <view class="icon icon-share good-info-share"></view>
+  </view>
+  <view class="good-tips">
+    <view wx:for="{{goodTips}}" wx:key="good-tip-{{index}}" class="good-tips-item">
+      <text class="icon icon-tip good-tips-item-icon" />
+      <text>{{item}}</text>
+    </view>
+  </view>
+  <view class="good-reviews">
+    <view class="good-reviews-summary">Customer Reviews ({{goodReviews.length}})</view>
+    <view class="good-reviews-info">
+      <view wx:for="{{goodReviews}}" wx:key="good-review-{{index}}" class="good-reviews-info-item">
+        <view class="good-reviews-info-item-header">
+          <text class="good-reviews-info-item-header-base">{{item.location}} - {{item.name}}</text>
+          <text class="good-reviews-info-item-header-date">{{item.date}}</text>
+        </view>
+        <text class="good-reviews-info-item-content">{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="good-control-bar">
+    <view class="good-control-bar-buttons">
+      <text class="icon icon-home good-control-bar-buttons-home"></text>
+      <text class="icon icon-star good-control-bar-buttons-favourite"></text>
+      <text class="icon icon-cart good-control-bar-buttons-cart"></text>
+    </view>
+    <navigator class="good-control-bar-add-to-cart">
+      <view>Add to cart</view>
+    </navigator>
+  </view>
+</view>

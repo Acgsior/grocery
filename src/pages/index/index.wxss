@@ -1,64 +1,63 @@
-/**index.wxss**/
-.container {
-  display: flex;
-  flex-direction: column;
-  font-size: 26rpx;
-  color: #707070;
-}
-
 .index-search {
   display: flex;
   justify-content: center;
   margin: 15rpx;
 }
-
 .index-search-input {
   width: 85%;
   background-color: #eee;
   border-radius: 5rpx;
   padding: 0 10rpx;
 }
-
 .index-menu {
   display: flex;
   justify-content: space-around;
   margin: 15rpx;
 }
-
 .index-menu-item {
   padding: 5rpx;
 }
-
 .index-swiper {
   height: 400rpx;
 }
-
 .index-swiper-item {
   display: flex;
 }
-
 .index-swiper-item-img {
   width: 100%;
 }
-
 .index-tips {
   display: flex;
-  justify-content: space-around;
-  margin: 20rpx;
+  flex-wrap: wrap;
+  margin: 20rpx 15rpx;
 }
-
+.index-tips-item {
+  display: flex;
+  margin-right: 10rpx;
+}
+.index-tips-item > text {
+  line-height: 26rpx;
+}
+.index-tips-item-icon {
+  margin-right: 5rpx;
+}
 .index-goods {
   display: flex;
   justify-content: space-around;
   margin: 15rpx;
 }
-
-.index-goods-left, .index-goods-right {
+.index-goods-left,
+.index-goods-right {
   display: flex;
   flex-direction: column;
-  width: 45vw;
+  width: 50%;
 }
-
+.index-goods-left {
+  border-right: 10rpx solid #ffffff;
+}
+.index-goods-right {
+  border-left: 10rpx solid #ffffff;
+}
 .index-goods-info {
   padding: 15rpx;
   border-radius: 5rpx;
@@ -68,35 +67,29 @@
   align-items: center;
   margin-bottom: 20rpx;
 }
-
 .index-goods-info-img {
   width: 40vw;
   margin-bottom: 20rpx;
   border-radius: 5rpx;
 }
-
 .index-goods-info-label {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-
 .index-goods-info-name,
 .index-goods-info-price {
   line-height: 40rpx;
 }
-
 .index-goods-info-price-before,
 .index-goods-info-price-now {
   display: inline-flex;
 }
-
 .index-goods-info-price-before {
   margin: 0 10rpx;
   text-decoration: line-through;
 }
-
 .index-goods-info-price-now {
   margin: 0 10rpx;
   color: #7b0f16;
