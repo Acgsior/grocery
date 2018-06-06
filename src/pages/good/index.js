@@ -14,6 +14,29 @@ Page({
         type: 'SALE',
         description: 'Up to 50% off for the icy summer.',
       },
+      categories: [
+        {
+          name: 'type',
+          values: [
+            {
+              name: 'Enjoy here',
+              img: 'https://data.whicdn.com/images/126023343/large.jpg',
+            },
+            {
+              name: 'Take-away',
+              img: 'https://data.whicdn.com/images/88100882/large.jpg',
+            },
+          ],
+        },
+        {
+          name: 'size',
+          values: [{ name: 'short' }, { name: 'tall' }, { name: 'grande' }, { name: 'venti' }],
+        },
+        {
+          name: 'extra',
+          values: [{ name: 'milk' }, { name: 'sugar' }, { name: 'espresso' }],
+        },
+      ],
     },
     goodTips: [
       'Most praise',

@@ -38,7 +38,7 @@
       </view>
     </view>
   </view>
-
+  <!-- page bottom controal bar -->
   <view class="good-control-bar">
     <view class="good-control-bar-buttons">
       <text class="icon icon-home good-control-bar-buttons-home"></text>
@@ -48,5 +48,28 @@
     <navigator class="good-control-bar-add-to-cart">
       <view>Add to cart</view>
     </navigator>
+  </view>
+  <!-- add to cart layer -->
+  <view class="good-add-to-cart-layer">
+    <view class="good-sku-info">
+      <view class="good-sku-info-img"></view>
+      <view class="good-sku-info-base"></view>
+      <view class="good-sku-info-close"></view>
+    </view>
+    <view class="good-sku-info-categories">
+      <block wx:for="{{good.categories}}" key="good-category-{{categoryIndex}}" wx:for-item="category" wx:for-index="categoryIndex">
+        <view class="good-sku-info-categories-item">
+          <view class="good-sku-info-categories-item-subject"></view>
+          <block wx:for="{{category.values}}" key="good-category-{{categoryIndex}}-{{index}}">
+            <view class="good-sku-info-category-item-value">{{item.name}}</view>
+          </block>
+        </view>
+      </block>
+    </view>
+    <view class="good-sku-info-count">
+      <text class="good-sku-info-count-subject"></text>
+      <view class="good-sku-info-count-counter"></view>
+    </view>
+    <view class="good-sku-info-count-good-sku-info-add-to-cart"></view>
   </view>
 </view>
