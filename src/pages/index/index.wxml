@@ -23,7 +23,7 @@
   <view class="index-goods">
     <view class="index-goods-left">
       <block wx:for="{{indexGoods}}" wx:key="index-good-left-{{index}}">
-        <navigator wx:if="{{index % 2 === 0}}" url="../good/good" delta="1" class="index-goods-info">
+        <navigator wx:if="{{index % 2 === 0}}" url="../good/index" delta="1" class="index-goods-info">
           <image src="{{item.img}}" mode="widthFix" class="index-goods-info-img" />
           <view class="index-goods-info-label">
             <text class="index-goods-info-name">{{item.name}}</text>
@@ -37,7 +37,7 @@
     </view>
     <view class="index-goods-right">
       <block wx:for="{{indexGoods}}" wx:key="index-good-left-{{index}}">
-        <navigator wx:if="{{index % 2 === 1}}" url="../good/good" delta="1" class="index-goods-info">
+        <navigator wx:if="{{index % 2 === 1}}" url="../good/index" delta="1" class="index-goods-info">
           <image src="{{item.img}}" mode="widthFix" class="index-goods-info-img" />
           <view class="index-goods-info-label">
             <text class="index-goods-info-name">{{item.name}}</text>
