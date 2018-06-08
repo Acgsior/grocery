@@ -17,6 +17,7 @@ Page({
       categories: [
         {
           name: 'type',
+          pictorial: true,
           values: [
             {
               name: 'Enjoy here',
@@ -66,5 +67,20 @@ Page({
           "Obviously every Costa will be different, with different levels of training and knowledge - but generally, they are pretty good, and the coffee usually tastes nice. That's the main thing :)",
       },
     ],
+    selected: {},
+  },
+  onLoad: function() {
+    const {
+      good: { categories },
+    } = this.data
+    const defaultPictorialCategoryValue = categories.find(cat => cat.pictorial).values[0]
+    console.log(defaultPictorialCategoryValue)
+    this.setData({
+      selected: {
+        img: defaultPictorialCategoryValue.img,
+        categories: [defaultPictorialCategoryValue],
+        quantity: 1,
+      },
+    })
   },
 })
