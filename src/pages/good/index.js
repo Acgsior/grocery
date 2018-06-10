@@ -68,19 +68,72 @@ Page({
       },
     ],
     selected: {},
+    displayAddToCartLayer: false,
   },
   onLoad: function() {
     const {
       good: { categories },
-    } = this.data
-    const defaultPictorialCategoryValue = categories.find(cat => cat.pictorial).values[0]
-    console.log(defaultPictorialCategoryValue)
+    } = this.data;
+
+    const pictorialCategoryIndex = categories.findIndex(cat => cat.pictorial);
+    const categoryValueIndexes = Array.prototype.fill.call([], -1, 0, categories.length - 1);
+    categoryValueIndexes[pictorialCategoryIndex] = 0;
+
     this.setData({
       selected: {
-        img: defaultPictorialCategoryValue.img,
-        categories: [defaultPictorialCategoryValue],
+        img: categories[pictorialCategoryIndex].values[0].img,
+        categories: categoryValueIndexes,
         quantity: 1,
       },
-    })
+    });
   },
-})
+  handleMinusButtonTap: function() {
+    const {
+      selected: { quantity },
+    } = this.data;
+    if (quantity !== 1) {
+      this.setData({
+        'selected.quantity': quantity - 1,
+      });
+    }
+  },
+  handlePlusButtonTap: function() {
+    const {
+      selected: { quantity },
+    } = this.data;
+    if (quantity !== 99) {
+      this.setData({
+        'selected.quantity': quantity + 1,
+      });
+    }
+  },
+  handleCategoryValueTap: function(e) {
+    const {
+      currentTarget: {
+        dataset: { index, value },
+      },
+    } = e;
+    const {
+      good: { categories: goodCategories },
+      selected: { categories },
+    } = this.data;
+    if (categories[index] !== value) {
+      this.setData({
+        [`selected.categories[${index}]`]: value,
+      });
+      if (goodCategories[index].pictorial) {
+        this.setData({
+          'selected.img': goodCategories[index].values[value].img,
+        });
+      }
+    }
+  },
+  handleAddToCartMaskTap: function() {
+    const displayAddToCartLayer = false;
+    this.setData({ displayAddToCartLayer });
+  },
+  handleAddToCartLayerContralBtnTap: function() {
+    const displayAddToCartLayer = true;
+    this.setData({ displayAddToCartLayer });
+  },
+});

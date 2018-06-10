@@ -45,54 +45,52 @@
       <text class="icon icon-star good-control-bar-buttons-favourite"></text>
       <text class="icon icon-cart good-control-bar-buttons-cart"></text>
     </view>
-    <navigator class="good-control-bar-add-to-cart">
-      <view>Add to cart</view>
-    </navigator>
+    <view class="good-control-bar-add-to-cart" bind:tap="handleAddToCartLayerContralBtnTap">
+      Add to cart
+    </view>
   </view>
   <!-- add to cart layer -->
-  <view class="good-add-to-cart-mask"></view>
-  <view class="good-add-to-cart-layer">
-    <view class="good-sku-info">
-      <view class="good-sku-info-img">
-        <image src="{{selected.img}}" mode="aspectFill" />
-      </view>
-      <view class="good-sku-info-base">
-        <view class="good-sku-info-base-price">
-          <text class="good-base-price-before">${{good.priceBefore}}</text>
-          <text class="good-base-price-now">${{good.price}}</text>
+  <view class="good-add-to-cart-layer {{displayAddToCartLayer ? '' : 'invisible'}}">
+    <view class="good-add-to-cart-mask" bind:tap="handleAddToCartMaskTap"></view>
+    <view class="good-add-to-cart-container">
+      <view class="good-sku-info">
+        <view class="good-sku-info-img">
+          <image src="{{selected.img}}" mode="aspectFill" />
         </view>
-        <view class="view good-sku-info-base-promotion">
-          <text class="good-info-promotion-description">{{good.promotion.description}}</text>
-        </view>
-        <view class="good-sku-info-base-selection"></view>
-      </view>
-    </view>
-    <view class="good-sku-info-categories">
-      <block wx:for="{{good.categories}}" wx:key="good-category-{{categoryIndex}}" wx:for-item="category" wx:for-index="categoryIndex">
-        <view class="good-sku-info-categories-item">
-          <view class="good-sku-info-categories-item-subject">{{category.name}}</view>
-          <view class="good-sku-info-categories-item-values">
-            <block wx:for="{{category.values}}" wx:key="good-category-{{categoryIndex}}-{{index}}">
-              <view class="{{selected.categories[categoryIndex].name === item.name ? 'selected' : ''}}">
-                {{item.name}}
-              </view>
-            </block>
+        <view class="good-sku-info-base">
+          <view class="good-sku-info-base-price">
+            <text class="good-base-price-before">${{good.priceBefore}}</text>
+            <text class="good-base-price-now">${{good.price}}</text>
           </view>
+          <view class="view good-sku-info-base-promotion">
+            <text class="good-info-promotion-description">{{good.promotion.description}}</text>
+          </view>
+          <view class="good-sku-info-base-selection"></view>
         </view>
-      </block>
-    </view>
-    <view class="good-sku-info-count">
-      <view class="good-sku-info-count-subject">
-        Quantity
       </view>
-      <view class="good-sku-info-count-counter">
-        <view class="good-sku-info-count-counter-minus">-</view>
-        <input type="number" class="good-sku-info-count-counter-value" confirm-type="done" value="{{selected.quantity}}" maxlength="2" />
-        <view class="good-sku-info-count-counter-plus">+</view>
+      <view class="good-sku-info-categories">
+        <block wx:for="{{good.categories}}" wx:key="good-category-{{categoryIndex}}" wx:for-item="category" wx:for-index="categoryIndex">
+          <view class="good-sku-info-categories-item">
+            <view class="good-sku-info-categories-item-subject">{{category.name}}</view>
+            <view class="good-sku-info-categories-item-values">
+              <block wx:for="{{category.values}}" wx:key="good-category-{{categoryIndex}}-{{index}}">
+                <view class="{{selected.categories[categoryIndex] === index ? 'selected' : ''}}" data-index="{{categoryIndex}}" data-value="{{index}}" bind:tap="handleCategoryValueTap">
+                  {{item.name}}
+                </view>
+              </block>
+            </view>
+          </view>
+        </block>
       </view>
-    </view>
-    <view class="good-sku-info-add-to-cart">
-      Add to Cart
+      <view class="good-sku-info-count">
+        <view class="good-sku-info-count-subject">Quantity</view>
+        <view class="good-sku-info-count-counter">
+          <view class="good-sku-info-count-counter-minus" bind:tap="handleMinusButtonTap">-</view>
+          <input type="number" class="good-sku-info-count-counter-value" confirm-type="done" value="{{selected.quantity}}" maxlength="2" />
+          <view class="good-sku-info-count-counter-plus" bind:tap="handlePlusButtonTap">+</view>
+        </view>
+      </view>
+      <view class="good-sku-info-add-to-cart">Add to Cart</view>
     </view>
   </view>
 </view>
