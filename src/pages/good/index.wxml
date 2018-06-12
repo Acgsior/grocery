@@ -90,7 +90,9 @@
           <view class="good-sku-info-count-counter-plus" bind:tap="handlePlusButtonTap">+</view>
         </view>
       </view>
-      <view class="good-sku-info-add-to-cart">Add to Cart</view>
+      <navigator url="../cart/index" delta="1" class="good-sku-info-add-to-cart">
+        Add to Cart
+      </navigator>
     </view>
   </view>
 </view>

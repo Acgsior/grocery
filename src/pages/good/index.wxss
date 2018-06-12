@@ -236,7 +236,6 @@
   text-align: center;
 }
 .good-add-to-cart-container .good-sku-info-add-to-cart {
-  width: 100vw;
   background-color: #7b0f16;
   color: #e0e0e0;
   font-size: 40rpx;

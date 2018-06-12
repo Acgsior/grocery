@@ -35,7 +35,7 @@ Page({
         },
         {
           name: 'extra',
-          values: [{ name: 'milk' }, { name: 'sugar' }, { name: 'espresso' }],
+          values: [{ name: 'extra milk' }, { name: 'extra sugar' }, { name: 'extra espresso' }],
         },
       ],
     },
@@ -86,6 +86,9 @@ Page({
         quantity: 1,
       },
     });
+  },
+  onHide: function() {
+    this.handleAddToCartMaskTap();
   },
   handleMinusButtonTap: function() {
     const {

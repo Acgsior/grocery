@@ -1,0 +1,72 @@
+<view class="container">
+  <view class="cart" wx:if="{{goods.length > 0}}">
+    <view class="cart-list">
+      <block wx:for="{{goods}}" wx:for-item="good" wx:for-index="goodIndex" wx:key="cart-list-item-{{goodIndex}}">
+        <view class="cart-list-item">
+          <view class="cart-list-item-img">
+            <image src="{{good.img}}" mode="aspectFill" />
+          </view>
+          <view class="cart-list-item-base">
+            <view class="cart-list-item-info">
+              <view class="cart-list-item-info-line">
+                <text class="cart-list-item-info-name">{{good.name}}</text>
+                <text class="cart-list-item-info-price">${{good.price}}</text>
+              </view>
+              <view class="cart-list-item-info-line">
+                <text class="cart-list-iterm-info-category">
+                  <block wx:for="{{good.categories}}" wx:key="cart-list-item-{{goodIndex}}-category-{{index}}">
+                    <text>{{index > 0 ? ', ' : ''}}{{item}}</text>
+                  </block>
+                </text>
+                <text class="cart-list-item-info-price-before">${{good.priceBefore}}</text>
+              </view>
+              <view class="cart-list-item-info-promotion">{{good.promotions[0]}}</view>
+            </view>
+            <view class="cart-list-item-control">
+              <view class="cart-list-item-info-counter">
+                <view class="cart-list-item-info-counter-minus" data-index="{{goodIndex}}" bind:tap="handleMinusButtonTap">
+                  -
+                </view>
+                <input type="number" class="cart-list-item-info-counter-value" confirm-type="done" value="{{good.quantity}}" maxlength="2" />
+                <view class="cart-list-item-info-counter-plus" data-index="{{goodIndex}}" bind:tap="handlePlusButtonTap">
+                  +
+                </view>
+              </view>
+              <view class="cart-list-item-info-delete" data-index="{{goodIndex}}" bind:tap="handleDeleteButtonTap">
+                X
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="cart-summary">
+      <view class="cart-summary-total">
+        <text class="cart-summary-label">SubTotal:</text>
+        <view class="cart-summary-amount">
+          <text class="cart-summary-sub-total-before">${{summary.subTotalBefore}}</text>
+          <text class="cart-summary-sub-total">${{summary.subTotal}}</text>
+        </view>
+      </view>
+      <view class="cart-summary-shipping">
+        <text class="cart-summary-label">(Free for $40) Shipping:</text>
+        <view class="cart-summary-amount">
+          <text class="cart-summary-shipping-total-before">$20</text>
+          <text class="cart-summary-shipping-total">${{summary.shipping}}</text>
+        </view>
+      </view>
+    </view>
+    <navigator url="../index/index" delta="1" class="cart-continue">Continue Shopping >></navigator>
+    <view class="cart-footer-control">
+      <view class="cart-footer-control-total">
+        <text class="cart-footer-control-total-label">Total</text>
+        <text class="cart-footer-control-total-amount">${{summary.total}}</text>
+      </view>
+      <view class="cart-footer-control-checkout">Checkout ({{summary.quantity}})</view>
+    </view>
+  </view>
+  <view class="cart-empty" wx:if="{{goods.length <= 0}}">
+    <text class="cart-empty-msg">Your shopping cart is empty.</text>
+  </view>
+  <view class="global-footer"></view>
+</view>
